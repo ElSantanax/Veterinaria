@@ -1,10 +1,14 @@
 import { create } from "zustand";
-import type { Patient } from "./types";
+import type { DraftPatient, Patient } from "./types";
 
 type PatientState = {
     patients: Patient[]
+    addPatient: (date: DraftPatient) => void
 }
 
 export const usePatientState = create<PatientState>(() => ({
-    patients: []
+    patients: [],
+    addPatient: (date) => {
+        console.log(date);
+    }
 }))
