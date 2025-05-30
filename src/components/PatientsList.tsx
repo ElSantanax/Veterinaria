@@ -5,7 +5,7 @@ export default function PatientsList() {
     const patients = usePatientState((state) => state.patients)
 
     return (
-        <div className="md:w-1/2 lg:h-3/5 md:h-screen">
+        <div className="md:w-1/2 lg:h-3/5 md:h-screen overflow-y-scroll">
             {patients.length ? (
                 <>
                     <h2 className="font-black text-3xl text-center">Listado de pacientes</h2>
