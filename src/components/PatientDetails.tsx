@@ -20,7 +20,7 @@ export default function PatientDetails({ patient }: PatientDetailsProps) {
             <PatientDetailsItems label="Fecha de alta" data={patient.date.toString()} />
             <PatientDetailsItems label="Sintoma" data={patient.symptoms} />
 
-            <div className="flex justify-between mt-3">
+            <div className="flex flex-col lg:flex-row justify-between mt-3 gap-3">
                 <button
                     type="button"
                     className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white uppercase rounded-lg font-bold"
