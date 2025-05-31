@@ -10,6 +10,7 @@ export default function PatientForm() {
     const { register, handleSubmit, setValue, formState: { errors }, reset } = useForm<DraftPatient>()
     const activeId = usePatientState(state => state.activeId)
     const patients = usePatientState(state => state.patients)
+    const updatePatient = usePatientState(state => state.updatePatient)
 
     useEffect(() => {
         if (activeId) {
@@ -23,8 +24,11 @@ export default function PatientForm() {
     }, [activeId])
 
     const registerPatient = (date: DraftPatient) => {
-        addPatient(date)
-
+        if (activeId) {
+            updatePatient(date)
+        } else {
+            addPatient(date)
+        }
         reset()
     }
 
