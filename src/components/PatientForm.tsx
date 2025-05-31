@@ -60,10 +60,6 @@ export default function PatientForm() {
                         placeholder="Nombre del Paciente"
                         {...register('name', {
                             required: 'El nombre del paciente es obligatorio',
-                            // maxLength: {
-                            //     value: 15,
-                            //     message: 'Máximo 10 caracteres'
-                            // }
                         })}
                     />
                     {errors.name && (
